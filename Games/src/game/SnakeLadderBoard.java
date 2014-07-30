@@ -21,10 +21,11 @@ public class SnakeLadderBoard implements Board {
 			tempGrid[i] = String.valueOf(i+1);
 		}
 		grid = tempGrid;
-		setSnakesLadders();
+		setSnakes();
+		setLadders();
 	}
 
-	private void setSnakesLadders(){
+	private void setSnakes(){
 		
 		grid[16] = "s1";
 		grid[6] = "t1";
@@ -36,6 +37,8 @@ public class SnakeLadderBoard implements Board {
 		grid[74] = "t4";
 		grid[98] = "s5";
 		grid[77] = "t5";
+	}
+	private void setLadders(){
 		
 		grid[13] = "l1";
 		grid[3] = "f1";
@@ -57,6 +60,7 @@ public class SnakeLadderBoard implements Board {
 	@Override
 	public void displayBoard() {
 
+		System.out.println("\nBoard: ");
 		for (int i = 4; i >= 0; i--) {
 			goLeft((i*2)+1);
 			System.out.println("\n");

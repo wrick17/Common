@@ -45,7 +45,7 @@ public class SnakeLadderPlayer implements Player{
 	
 	private void rollDice() {
 		 value = (int) (Math.floor(Math.random() * 6)) + 1;
-		 System.out.println("Your dice value is : "+value);
+		 System.out.println("\nYour dice value is : "+value);
 	}
 
 	@Override

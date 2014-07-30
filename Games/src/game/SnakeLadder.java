@@ -10,9 +10,7 @@ public class SnakeLadder implements Game {
 	private int totalGrid;
 	private int currentValue;
 	private int turnPosition;
-	private int winCondition;
 	private Board b;
-	private int count = 0;
 	private String symbol;
 	private Scanner sc;
 	
@@ -44,6 +42,7 @@ public class SnakeLadder implements Game {
 		}
 		System.out.print("Enter the symbol who wants to start first: ");
 		symbol = sc.next();
+//		System.out.println();
 
 		for (i = 0; i < totalPlayers; i++) {
 			if (symbol.equals(player[i].getSymbol())) {
@@ -84,10 +83,8 @@ public class SnakeLadder implements Game {
 		if (turnPosition > totalPlayers - 1) {
 			turnPosition = 0;
 		}
-		System.out.print(player[turnPosition].getName()
-				+ ", Press any key to roll the dice");
-		System.out.println();
-		sc.next();
+		System.out.print(player[turnPosition].getName()	+ ", Press return to roll the dice: ");
+		sc.nextLine();
 		symbol = player[turnPosition].getSymbol();
 		player[turnPosition].play();
 		currentValue = player[turnPosition].getCurrentValue();
